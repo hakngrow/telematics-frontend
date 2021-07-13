@@ -14,7 +14,7 @@ class showDriverDetails extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://localhost:8082/api/drivers/'+this.props.match.params.id)
+      .get('http://hakngrow-telematics-backend.herokuapp.com/api/drivers/'+this.props.match.params.id)
       .then(res => {
         // console.log("Print-showDriverDetails-API-response: " + res.data);
         this.setState({
