@@ -14,7 +14,7 @@ class ShowDriverList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:8082/api/drivers')
+      .get('http://hakngrow-telematics-backend.herokuapp.com/api/drivers')
       .then(res => {
         this.setState({
           drivers: res.data
