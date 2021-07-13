@@ -38,7 +38,7 @@ class CreateDriver extends Component {
       };
   
       axios
-        .post('http://localhost:8082/api/drivers', data)
+        .post('http://hakngrow-telematics-backend.herokuapp.com/api/drivers', data)
         .then(res => {
           this.setState({
             driver_id: '',
