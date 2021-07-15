@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import '../App.css'
 
+const config = require('config');
+const uri = config.get('backendURI');
+
 class UpdateDriverInfo extends Component {
   constructor(props) {
     super(props)
@@ -21,7 +24,7 @@ class UpdateDriverInfo extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://hakngrow-telematics-backend.herokuapp.com/api/drivers/' + this.props.match.params.id)
+      .get(`http://{uri}/api/drivers/` + this.props.match.params.id)
       .then((res) => {
         // this.setState({...this.state, book: res.data})
         this.setState({
@@ -60,7 +63,7 @@ class UpdateDriverInfo extends Component {
 
     axios
       .put(
-        'http://localhost:8082/api/drivers/' + this.props.match.params.id,
+        `http://{uri}/api/drivers/` + this.props.match.params.id,
         data,
       )
       .then((res) => {
