@@ -4,6 +4,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import DriverCard from './DriverCard';
 
+const config = require('config');
+const uri = config.get('backendURI');
+
 class ShowDriverList extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +17,7 @@ class ShowDriverList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://hakngrow-telematics-backend.herokuapp.com/api/drivers')
+      .get(`http://{uri}/api/drivers`)
       .then(res => {
         this.setState({
           drivers: res.data
