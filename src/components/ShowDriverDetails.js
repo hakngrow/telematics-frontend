@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
+const config = require('config');
+const uri = config.get('backendURI');
+
 class showDriverDetails extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +17,7 @@ class showDriverDetails extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://hakngrow-telematics-backend.herokuapp.com/api/drivers/'+this.props.match.params.id)
+      .get(`http://{uri}/api/drivers/` + this.props.match.params.id)
       .then(res => {
         // console.log("Print-showDriverDetails-API-response: " + res.data);
         this.setState({
@@ -28,7 +31,7 @@ class showDriverDetails extends Component {
 
   onDeleteClick (id) {
     axios
-      .delete('http://localhost:8082/api/driversd/' + id)
+      .delete(`http://{uri}/api/drivers/` + id)
       .then(res => {
         this.props.history.push("/");
       })
