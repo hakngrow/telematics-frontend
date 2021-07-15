@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
+const config = require('config');
+const uri = config.get('backendURI');
+
 class CreateDriver extends Component {
     constructor() {
       super();
@@ -38,7 +41,7 @@ class CreateDriver extends Component {
       };
   
       axios
-        .post('http://hakngrow-telematics-backend.herokuapp.com/api/drivers', data)
+        .post(`http://{uri}/api/drivers`, data)
         .then(res => {
           this.setState({
             driver_id: '',
