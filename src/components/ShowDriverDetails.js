@@ -17,7 +17,7 @@ class showDriverDetails extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get(`http://{uri}/api/drivers/` + this.props.match.params.id)
+      .get(`http://${uri}/api/drivers/` + this.props.match.params.id)
       .then(res => {
         // console.log("Print-showDriverDetails-API-response: " + res.data);
         this.setState({
@@ -31,7 +31,7 @@ class showDriverDetails extends Component {
 
   onDeleteClick (id) {
     axios
-      .delete(`http://{uri}/api/drivers/` + id)
+      .delete(`http://${uri}/api/drivers/` + id)
       .then(res => {
         this.props.history.push("/");
       })
