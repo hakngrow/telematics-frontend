@@ -24,7 +24,7 @@ class UpdateDriverInfo extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get(`http://{uri}/api/drivers/` + this.props.match.params.id)
+      .get(`http://${uri}/api/drivers/` + this.props.match.params.id)
       .then((res) => {
         // this.setState({...this.state, book: res.data})
         this.setState({
