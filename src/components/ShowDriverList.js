@@ -17,7 +17,7 @@ class ShowDriverList extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://{uri}/api/drivers`)
+      .get(`http://${uri}/api/drivers`)
       .then(res => {
         this.setState({
           drivers: res.data
