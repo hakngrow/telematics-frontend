@@ -41,7 +41,7 @@ class CreateDriver extends Component {
       };
   
       axios
-        .post(`http://{uri}/api/drivers`, data)
+        .post(`http://${uri}/api/drivers`, data)
         .then(res => {
           this.setState({
             driver_id: '',
