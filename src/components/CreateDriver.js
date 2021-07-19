@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
-const config = require('config');
-const uri = config.get('backendURI');
+const uri = process.env.REACT_APP_BACKEND_URI;
 
 class CreateDriver extends Component {
     constructor() {

@@ -7,6 +7,8 @@ import ShowDriverList from './components/ShowDriverList';
 import ShowDriverDetails from './components/ShowDriverDetails';
 import UpdateDriverInfo from './components/UpdateDriverInfo';
 
+import ShowPerformances from './components/ShowPerformances';
+
 class App extends Component {
   render() {
     return (
@@ -16,6 +18,8 @@ class App extends Component {
           <Route path='/create-driver' component={CreateDriver} />
           <Route path='/edit-driver/:id' component={UpdateDriverInfo} />
           <Route path='/show-driver/:id' component={ShowDriverDetails} />
+
+          <Route path='/performances' component={ShowPerformances} />
         </div>
       </Router>
     );

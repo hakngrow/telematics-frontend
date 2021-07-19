@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import '../App.css'
 
-const config = require('config');
-const uri = config.get('backendURI');
+const uri = process.env.REACT_APP_BACKEND_URI;
 
 class UpdateDriverInfo extends Component {
   constructor(props) {

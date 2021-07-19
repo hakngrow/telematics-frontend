@@ -4,8 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import DriverCard from './DriverCard';
 
-const config = require('config');
-const uri = config.get('backendURI');
+const uri = process.env.REACT_APP_BACKEND_URI;
 
 class ShowDriverList extends Component {
   constructor(props) {
